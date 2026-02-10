@@ -1,0 +1,1310 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body {
+	background-color: #F6F6EF;
+}
+
+img{
+	max-width: 100%;
+	display: block;		
+}
+
+header {
+	width: 25%;
+	float: left;
+}
+
+
+.logo-container {
+  display: inline-block;
+}
+
+.logo {
+  width: 350px;
+  height: auto;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+
+
+nav {
+	width: 70%;
+	float: right;
+	margin:4em 1em;
+	padding: 10px;
+	border-radius: 5px;
+	display: flex;
+	justify-content: center;
+}
+
+nav ul { 
+	list-style-type: none;
+	margin: 0;
+	text-align: center;
+	font-size: 2em;
+}
+
+nav li {
+	display: inline-block;
+	font-size: 1.75em;
+}
+
+nav li a {
+  display: inline-block;
+  color: #004AAD;
+  text-decoration: none;
+  padding: 15px 30px;
+  font-family: "Sriracha", cursive;
+  transition: transform 0.25s ease, color 0.25s ease;
+  position: relative;
+}
+
+nav li a:hover {
+  transform: translateY(-5px); /* sube */
+  color: #0070BB; /* azul más vivo */
+}
+
+nav li a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 8px;
+  width: 0;
+  height: 2px;
+  background-color: #0070BB;
+  transition: 0.3s ease;
+  transform: translateX(-50%);
+}
+
+nav li a:hover::after {
+  width: 60%;
+}
+
+
+main {
+	clear: left;
+	background-color: #DDE8F2;
+	padding: 3%;
+	font-size: 1.25em;
+	text-align: center;
+	margin: 20px auto;
+}
+
+.quote {
+  font-size: 2em; /* más grande */
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  color: #004c99; /* azul suave */
+  font-weight: 600;
+  background-color: #f8fbff;
+  margin: 40px auto;
+  padding: 15px 25px;
+  width: fit-content;
+  border-radius: 10px;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  border: 2px solid #9ec9ff;
+}
+
+.border-quote {
+  background-color: #f8fbff;
+  border: 2px solid #9ec9ff;
+  border-radius: 12px;
+  padding: 25px 30px;
+  margin: 25px auto;
+  width: 75%;
+  box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.08);
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5em;
+  line-height: 1.7em;
+  color: #003366;
+  text-align: center;
+}
+
+.quote-note {
+  background-color: #f8fbff;
+  border: 2px solid #9ec9ff;
+  border-radius: 12px;
+  padding: 25px 30px;
+  margin: 25px auto;
+  width: 70%;
+  box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.08);
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5em;
+  line-height: 1.7em;
+  color: #003366;
+  position: relative;
+  text-align: center;
+}
+
+/* efecto comillas decorativas */
+.quote-note::before {
+  content: "❝";
+  font-size: 3em;
+  color: #0070BB;
+  position: absolute;
+  top: -10px;
+  left: 15px;
+  opacity: 0.2;
+}
+
+.quote-note::after {
+  content: "❞";
+  font-size: 3em;
+  color: #0070BB;
+  position: absolute;
+  bottom: -25px;
+  right: 15px;
+  opacity: 0.2;
+}
+
+
+
+/*───────────────────────────────
+ STYLE RULES FOR THE FOOTER PAGE
+───────────────────────────────*/
+footer p {
+	font-size: 2em;
+	text-align: center;
+	color: #0b4e9d;
+	padding: 0 1em;
+}
+
+footer p a {
+	color: #0b4e9d;
+	text-decoration: none;
+	font-size: 1em;
+}
+
+/*───────────────────────────────
+ END OF THE FOOTER PAGE
+───────────────────────────────*/
+
+/*─────────────────────────────
+ STYLE RULE FOR THE INDEX PAGE
+───────────────────────────────*/
+.city-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 100px;
+}
+
+.city-card {
+  width: 500px;         
+  background-color: #f0f8ff;
+  border-radius: 10px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 10px;
+  color: #004c99;
+  font-weight: bold;
+  overflow: hidden;          /* evita que la imagen se salga */
+}
+
+
+
+/*mobile viewport*/
+
+@media screen and (max-width: 780px) {
+	.city-section {
+		flex-direction: column;
+	}
+	
+	.city-card {
+  width: 100%;
+  max-width: 350px;   /* para que no se vea exagerada */
+  margin: 0 auto;
+}
+	}	
+
+
+.city-card:hover {
+  transform: translateY(-10px);
+  transition: 0.3s ease;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.city-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.city-card h3 {
+  color: #004AAD;
+  font-size: 2em;
+  padding: 15px 0;
+  font-family: "Sriracha", cursive;
+}
+
+.city-card a {
+	text-decoration: none;
+}
+
+/*───────────────────────────────
+ STYLE RULES FOR CONTACT PAGE 📞
+───────────────────────────────*/
+.contact-container {
+  background-color: #dde8f2;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 800px;
+  margin: 40px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: 2px solid #9ec9ff;
+}
+
+.contact-container label {
+  color: #004c99;
+  font-weight: bold;
+  font-family: "Sriracha", cursive;
+  font-size: 1.5em;
+}
+
+.contact-container input[type=text],
+.contact-container select,
+.contact-container textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #aacbe3;
+  border-radius: 6px;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  font-family: "Playfair Display", serif;
+  font-size: 1.2em;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+.contact-container input[type=submit] {
+  background-color: #0b4e9d;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s ease;
+  font-size: 1.4em;
+}
+
+.contact-container input[type=submit]:hover {
+  background-color: #0066ff;
+  transform: scale(1.03);
+}
+
+main h1 {
+  color: #0b4e9d;
+  font-family:"Sriracha", cursive;
+  text-align: center;
+  font-size: 2em;
+}
+
+main p {
+  text-align: center;
+  font-family: "Playfair Display", serif;
+  font-size: 1.6em;
+  color: #004c99;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.popup-content {
+  background-color: #f2f8ff;
+  padding: 30px 40px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  font-family: "Playfair Display", serif;
+  color: #004c99;
+  animation: scaleUp 0.4s ease-in-out;
+}
+
+.popup-content h3 {
+  font-family: "Sriracha", cursive;
+  font-size: 1.8em;
+  margin-bottom: 10px;
+}
+
+.popup-content p {
+  font-size: 1.1em;
+  line-height: 1.5;
+}
+
+#close-popup {
+  background-color: #0070BB;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  margin-top: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: 0.3s ease;
+}
+
+#close-popup:hover {
+  background-color: #0b4e9d;
+  transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleUp {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/*───────────────────────────────
+ END OF THE CONTACT PAGE 📞
+───────────────────────────────*/
+
+/*───────────────────────────────
+ STYLE RULES FOR THE MAP AREA
+───────────────────────────────*/
+
+
+#map h2 {
+  text-align: center;
+  color: #1a4c8b; /* azul elegante */
+  font-family: 'Amarante', serif;
+  margin-bottom: 40px;
+}
+
+/* 🗺️ Map container */
+.map-container {
+  border: 4px solid #b6d0ff;
+  border-radius: 15px;
+  overflow: hidden;
+  max-width: 90%;
+  margin: 0 auto;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/*───────────────────────────────
+ 🌆 STYLE RULES FOR SEOUL PAGE
+───────────────────────────────*/
+
+/* 🎞️ Slideshow Hero */
+.slideshow-container {
+  position: relative;
+  max-width: 100%;
+  height: 800px;
+  overflow: hidden;
+  border-radius: 15px;
+  margin: 30px auto;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.mySlides {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+
+.mySlides img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+  animation: fade 2s ease-in-out;
+
+}
+
+@keyframes fade {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}
+
+.seoul-intro {
+  background: linear-gradient(180deg, #f9fcff 0%, #e9f2ff 100%);
+  padding: 60px 40px;
+  border-radius: 20px;
+  width: 80%;
+  margin: 70px auto;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border: 2px solid #bcd8ff;
+  animation: fadeInUp 1s ease;
+}
+
+.seoul-intro h2 {
+  color: #004aad;
+  font-family: "Sriracha", cursive;
+  font-size: 2.2em;
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.seoul-intro p {
+  color: #003b6f;
+  font-family: "Playfair Display", serif;
+  font-size: 1.6em;
+  line-height: 1.6;
+  width: 85%;
+  margin: 0 auto;
+}
+/* ✨ Section Styles */
+section {
+  padding: 60px 5%;
+  border-radius: 15px;
+  margin: 60px auto;
+  width: 90%;
+  text-align: center;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+section h2 {
+  font-family: "Sriracha", cursive;
+  color: #004AAD;
+  font-size: 2.5em;
+  margin-bottom: 25px;
+}
+
+section p {
+  font-family: "Playfair Display", serif;
+  color: #003366;
+  font-size: 1.6em;
+  width: 80%;
+  margin: 0 auto 40px auto;
+  line-height: 1.6em;
+}
+
+/* 🌸 Different background tones per section */
+#modern-seoul { background-color: #f4f8ff; }
+#palaces { background-color: #fef6f6; }
+#culture { background-color: #f8fff9; }
+#map { background-color: #f5faff; }
+
+/* 🩵 Card Style (for places & experiences) */
+.place-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.place-card {
+  background-color: white;
+  border-radius: 20px;
+  width: 400px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.place-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+}
+
+.place-card img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.place-card h3 {
+  font-family: "Amarante", serif;
+  color: #004AAD;
+  margin: 15px 0 8px;
+/*  padding: 15px 10px 5px;*/
+  font-size: 1.5em;
+}
+
+.place-card p {
+  font-family: "Playfair Display", serif;
+  color: #003366;
+  padding: 0 15px 20px;
+  font-size: 1.3em;
+}
+
+/* 💬 Closing Reflection */
+.three-quote {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-size: 2em;
+  color: #004AAD;
+  background-color: #f8fbff;
+  border: 2px solid #a7c7ff;
+  border-radius: 12px;
+  padding: 30px 40px;
+  width: 70%;
+  margin: 60px auto;
+  box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.08);
+  position: relative;
+  text-align: center;
+}
+
+.three-quote::before {
+  content: "❝";
+  font-size: 2.5em;
+  color: #0070BB;
+  position: absolute;
+  top: -20px;
+  left: 20px;
+  opacity: 0.2;
+}
+
+.three-quote::after {
+  content: "❞";
+  font-size: 2.5em;
+  color: #0070BB;
+  position: absolute;
+  bottom: -30px;
+  right: 20px;
+  opacity: 0.2;
+}
+
+/* ✨ Fade-in on scroll animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+#other-activities {
+  background-color: #fff8f9;
+}
+
+/*───────────────────────────────
+ 🌆 END OF SEOUL PAGE STYLES
+───────────────────────────────*/
+
+/*───────────────────────────────
+ 🌊 STYLE RULES FOR BUSAN PAGE
+───────────────────────────────*/
+
+.busan-intro {
+  background: linear-gradient(180deg, #fef9f3 0%, #e8f5ff 100%);
+  padding: 60px 40px;
+  border-radius: 20px;
+  width: 80%;
+  margin: 70px auto;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border: 2px solid #cde7ff;
+  animation: fadeInUp 1s ease;
+}
+
+.busan-intro h2 {
+  color: #004aad;
+  font-family: "Sriracha", cursive;
+  font-size: 2.2em;
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.busan-intro p {
+  color: #003b6f;
+  font-family: "Playfair Display", serif;
+  font-size: 1.6em;
+  line-height: 1.6;
+  width: 85%;
+  margin: 0 auto;
+}
+
+/* Sections */
+#modern-busan { background-color: #EAF6FF; }
+#beaches-nature { background-color: #FFF5E1; }
+#cultural-busan { background-color: #E8F8F5; }
+#other-busan { background-color: #F9F9FF; }
+
+/*───────────────────────────────
+ 🌊 END OF BUSAN PAGE STYLES
+───────────────────────────────*/
+
+/*───────────────────────────────
+ 🧡 JEJU PAGE STYLE RULES
+───────────────────────────────*/
+
+.jeju-intro {
+  background-color: #fffaf3;
+  padding: 40px;
+  border-radius: 15px;
+  width: 80%;
+  margin: 60px auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  color: #3e5f3c;
+}
+
+.jeju-intro h2 {
+  font-family: "Sriracha", cursive;
+  color: #f47c25;
+  font-size: 3em;
+}
+
+.jeju-intro p {
+  font-family: "Playfair Display", serif;
+  font-size: 2em;
+  color: #3e5f3c;
+}
+
+#nature { background-color: #f8fff9; }
+#culture { background-color: #fff6ec; }
+#beaches { background-color: #EAF6FF}
+#map { background-color: #f5faff; }
+
+/*───────────────────────────────
+ 🧡 END OF JEJU PAGE STYLES 
+───────────────────────────────*/
+
+/*───────────────────────────────
+ 🍱 KOREAN FOOD PAGE STYLES
+───────────────────────────────*/
+
+#korean-food { background-color: #f4f9ff; }
+
+/*───────────────────────────────
+ 📘 STYLE RULES FOR READ ME PAGE 
+───────────────────────────────*/
+
+#hotels { background-color: #f4f9ff; }
+
+/*─────────────────────────────────────────
+ 📘 END OF THE STYLE RULES FOR READ ME PAGE 
+───────────────────────────────────────────*/
+
+/* 🚍 Lists (Transport & Tips) */
+.info-list {
+  list-style: none;
+  padding: 0;
+  width: 70%;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.info-list li {
+  background-color: #ffffff;
+  margin-bottom: 15px;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  font-family: "Playfair Display", serif;
+  color: #003366;
+  font-size: 1.6em;
+  line-height: 1.5em;
+  transition: 0.3s ease;
+}
+
+.info-list li:hover {
+  transform: translateX(5px);
+  background-color: #eaf4ff;
+}
+
+
+#memory-card { background-color: #FFF0F5}
+#transport { background-color: #FFFAF0}
+#tips { background-color:  #F0FFF0}
+#readme { background-color: #f4f9ff}
+#hotels { background-color: #FFF5EE}
+
+/*memory card */
+
+.memory-card {
+  width: 700px;
+  height: 600px;
+  perspective: 1000px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 40px 0; 
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.memory-card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  backface-visibility: hidden;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-back {
+  background-color: #e6f0fa;
+  color: #003366;
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  font-family: "Playfair Display", serif;
+  font-size: 0.7em;
+  line-height: 1;
+}
+
+.memory-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; 
+  gap: 40px; 
+}
+
+.lotte-link {
+  color: #004AAD;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.lotte-link:hover {
+  color: #0070BB;
+  text-decoration: underline;
+}
+
+
+/* HAMBURGER BUTTON */
+.menu-btn {
+  display: none; /* escondido en desktop */
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  position: absolute;
+  top: 30px;
+  right: 25px;
+  z-index: 2000;
+}
+
+.menu-btn span {
+  width: 35px;
+  height: 4px;
+  background-color: #004AAD;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+/* animate when active */
+.menu-btn.active span:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+
+.menu-btn.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-btn.active span:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+
+
+/* MOBILE NAVIGATION */
+@media (max-width: 900px) {
+	nav {
+  float: none !important;
+}
+
+  header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 20px;
+    position: relative;
+  }
+
+  nav {
+    position: absolute;
+    top: 90px;
+    right: 10px;
+    background-color: white;
+    padding: 15px;
+    width: 250px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    display: none;
+    z-index: 1500;
+  }
+
+  nav ul {
+    display: block;
+    text-align: left;
+    font-size: 1.5em;
+  }
+
+  nav li {
+    display: block;
+    margin: 12px 0;
+  }
+
+  nav.active {
+    display: block;
+  }
+
+  .menu-btn {
+    display: flex;
+  }
+
+  nav li a {
+    padding: 10px 5px;
+  }
+
+}
+
+
+/* SPLASH SCREEN */
+#splash-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 999999;
+}
+
+#splash-screen img.splash-gif {
+  width: 800px; 
+  height: auto;
+  border-radius: 10px;
+}
+
+.enter-text {
+  margin-top: 20px;
+  font-size: 1.4em;
+  color: #004aad;
+  font-family: "Sriracha", cursive;
+  cursor: pointer;
+}
+
+/* SOCIAL ICONS FOOTER */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+/* Base styles */
+.social-icons a {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+/* Instagram */
+.instagram {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png");
+}
+
+/*Tikok*/
+.tiktok {
+  background-image: url("https://upload.wikimedia.org/wikipedia/en/a/a9/TikTok_logo.svg");
+  background-size: 80%;   
+}
+
+/* Hover */
+.social-icons a:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+#social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.social-icon {
+  width: 38px;
+  height: 38px;
+  transition: transform 0.3s ease;
+  border-radius: 6px;
+}
+
+
+
+
+/* MOBILE FIXES — SOLO PARA TELÉFONOS */
+@media screen and (max-width: 600px) {
+
+  /* body */
+  body {
+    overflow-x: hidden;
+  }
+
+  /* HEADER — logo más pequeño */
+  header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo-container {
+    padding-left: 15px;
+  }
+
+  .logo {
+    width: 180px !important;
+  }
+
+	
+  /* MAIN */
+  main {
+    padding: 20px 10px !important;
+    margin: 10px auto !important;
+  }
+
+  /* CITY CARDS */
+  .city-section {
+    flex-direction: column !important;
+    gap: 25px !important;
+    margin-bottom: 40px !important;
+  }
+
+  .city-card {
+    width: 100% !important;
+    max-width: 330px !important;
+    margin: 0 auto !important;
+  }
+
+  .city-card img {
+    height: 180px !important;
+  }
+
+  .city-card h3 {
+    font-size: 1.5em !important;
+  }
+
+  /* QUOTES — versión más pequeña */
+.quote {
+  width: 95% !important;
+  font-size: 1em !important;   /* antes 1.3em */
+  padding: 10px 14px !important;
+  line-height: 1.3em !important;
+}
+
+.quote-note,
+.border-quote {
+  width: 92% !important;
+  font-size: 0.90em !important;   /* antes 1.2em */
+  padding: 14px !important;
+  line-height: 1.45em !important;
+}
+
+  /* FOOTER */
+  footer p {
+    font-size: 1em !important;
+  }
+
+  .social-icon {
+    width: 31px !important;
+    height: 31px !important;
+  }
+
+  /* SPLASH SCREEN GIF */
+  #splash-screen img.splash-gif {
+    width: 85% !important;
+    max-width: 320px !important;
+  }
+
+}
+
+
+
+
+
+/* SEOUL — MOBILE FIXES (solo teléfonos) */
+@media screen and (max-width: 600px) {
+
+
+	  .slideshow-container {
+    height: 260px !important;
+    border-radius: 15px !important;
+    margin: 20px auto !important;
+    overflow: hidden !important;  
+	}
+
+  .mySlides {
+    height: 100% !important;
+  }
+
+  .mySlides img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;  
+    border-radius: 15px !important;
+  }
+
+  /*  Intro section */
+  .seoul-intro {
+    width: auto !important;
+    padding: 25px 15px !important;
+    margin: 25px auto !important;
+  }
+
+  .seoul-intro h2 {
+    font-size: 1em !important;
+    line-height: 1.2em !important;
+  }
+
+  .seoul-intro p {
+    font-size: 0.80em !important;
+    width: 100% !important;
+    line-height: 1.45em !important;
+  }
+
+  /*  Section titles + descriptions */
+  section {
+    width: 95% !important;
+    padding: 40px 10px !important;
+    margin: 35px auto !important;
+  }
+
+  section h2 {
+    font-size: 1em !important;
+    margin-bottom: 12px !important;
+  }
+
+  section p {
+    font-size: 0.80em !important;
+    width: 100% !important;
+    line-height: 1.45em !important;
+    margin-bottom: 25px !important;
+  }
+
+  /*  Place Cards (las grandes de 400px) */
+  .place-grid {
+    gap: 20px !important;
+  }
+
+
+	  .place-card {
+    width: 100% !important;
+    padding: 0 !important;
+    box-sizing: border-box !important; 
+  }
+
+  .place-card p {
+    word-wrap: break-word !important;   
+    overflow-wrap: break-word !important;
+    width: 95% !important;              
+    margin: 0 auto 15px auto !important;
+	font-size: 0.80em;
+  }
+
+  .place-card h3 {
+    width: 95% !important;  
+    margin: 10px auto 5px auto !important;
+    text-align: center !important;
+	font-size: 1em;
+  }
+
+  .place-card img {
+    height: 180px !important;
+    object-fit: cover !important;
+  }
+
+	  
+  /*  Map section */
+  .map-container {
+    max-width: 100% !important;
+    border-width: 2px !important;
+  }
+
+  #map iframe {
+    height: 260px !important;
+  }
+
+  /*  Closing quote */
+  .three-quote {
+    width: 92% !important;
+    font-size: 1em !important;
+    padding: 20px 18px !important;
+    line-height: 1.45em !important;
+    margin-top: 20px !important;
+  }
+
+  .three-quote::before,
+  .three-quote::after {
+    font-size: 1em !important;
+  }
+
+}
+
+/*  Ajustar tamaño del menú hamburguesa */
+@media (max-width: 600px) {
+
+  /* botón hamburguesa más pequeño */
+  .menu-btn {
+    top: 20px !important;
+    right: 20px !important;
+    gap: 5px !important;
+  }
+
+  .menu-btn span {
+    width: 28px !important;   
+    height: 3px !important;   
+    border-radius: 3px !important;
+  }
+	
+	nav ul {
+    padding-top: 40px !important;
+  }
+
+  nav ul li {
+    margin: 25px 0 !important; 
+  }
+
+  nav ul li a {
+    font-size: 1em !important; 
+  }
+	
+	  /* Reducir realmente el tamaño del texto del menú */
+  nav ul li a {
+    font-size: 1rem !important; 
+    line-height: 1.2 !important;
+  }
+
+  
+  nav ul {
+    width: 80% !important;
+    max-width: 300px !important;
+  }
+}
+
+/*  READ ME — FIX MEMORY CARDS ON MOBILE */
+@media screen and (max-width: 600px) {
+
+  .memory-wrapper {
+    gap: 20px !important;
+    padding: 0 !important;
+  }
+
+  .memory-card {
+    width: 100% !important;
+    max-width: 360px !important;
+    height: 285px !important;       
+    margin: 0 auto !important;
+    perspective: 800px !important;
+	column-gap: normal;
+  }
+
+  .card-inner {
+    height: 100% !important;
+  }
+
+  .card-front img {
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  .card-back {
+    padding: 10px !important;
+    font-size: 0.70em !important;
+    line-height: 1.3em !important;
+    overflow-y: auto !important;  
+  }
+	
+	.info-list li {
+  font-size: 0.80em;
+	}
+}
+
+
+/*  CONTACT FORM — MOBILE ONLY FIX */
+@media screen and (max-width: 600px) {
+
+  .contact-container {
+    padding: 18px !important;
+    max-width: 92% !important;
+    margin: 20px auto !important;
+  }
+
+  .contact-container label {
+    font-size: 1em !important;  
+  }
+
+  .contact-container input[type=text],
+  .contact-container select,
+  .contact-container textarea {
+    font-size: 0.9em !important;
+    padding: 7px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .contact-container textarea {
+    height: 120px !important;
+  }
+
+  main h1 {
+    font-size: 1.4em !important;
+  }
+
+  main p {
+    font-size: 1em !important;
+    width: 95% !important;
+  }
+
+  .contact-container input[type=submit] {
+    font-size: 1em !important;
+    padding: 9px 14px !important;
+  }
+}
+
+
