@@ -1,0 +1,448 @@
+/* ============================================================
+   Cultural Compass Travel Agency - Custom Styles
+   Color Palette: Blue (#004AAD) & Orange (#E87B35)
+   Fonts: Playfair Display (serif) & Sriracha (cursive)
+   ============================================================ */
+
+/* ---------- Root Variables ---------- */
+:root {
+    --primary-blue: #004AAD;
+    --primary-blue-light: #0070BB;
+    --primary-blue-dark: #003366;
+    --accent-orange: #E87B35;
+    --accent-orange-dark: #D06520;
+    --bg-cream: #F6F6EF;
+    --bg-light-blue: #DDE8F2;
+    --bg-card: #f0f8ff;
+    --text-dark: #003366;
+    --text-muted: #5a7a9a;
+    --border-blue: #9ec9ff;
+}
+
+/* ---------- Global Styles ---------- */
+body {
+    font-family: 'Playfair Display', Georgia, serif;
+    background-color: var(--bg-cream);
+    color: var(--text-dark);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Sriracha', cursive;
+    color: var(--primary-blue);
+}
+
+a {
+    color: var(--primary-blue);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--primary-blue-light);
+}
+
+/* ---------- Navigation ---------- */
+.navbar {
+    background-color: var(--primary-blue);
+    padding: 15px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.navbar-brand {
+    font-family: 'Sriracha', cursive;
+    font-size: 1.6em;
+    color: white !important;
+}
+
+.navbar-brand i {
+    color: var(--accent-orange);
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-family: 'Sriracha', cursive;
+    font-size: 1.05em;
+    margin: 0 5px;
+    transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.nav-link:hover {
+    color: var(--accent-orange) !important;
+    transform: translateY(-2px);
+}
+
+.search-input {
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border-radius: 20px;
+}
+
+.search-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.search-input:focus {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: var(--accent-orange);
+    color: white;
+    box-shadow: none;
+}
+
+/* ---------- Hero Section ---------- */
+.hero-section {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-light) 50%, var(--accent-orange) 100%);
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.hero-overlay {
+    width: 100%;
+    padding: 80px 0;
+}
+
+.hero-title {
+    font-family: 'Sriracha', cursive;
+    font-size: 3.5em;
+    color: white;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.hero-subtitle {
+    font-size: 1.4em;
+    color: rgba(255, 255, 255, 0.95);
+    max-width: 650px;
+    margin: 0 auto 30px;
+}
+
+/* ---------- Buttons ---------- */
+.btn-primary {
+    background-color: var(--primary-blue);
+    border-color: var(--primary-blue);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-blue-light);
+    border-color: var(--primary-blue-light);
+}
+
+.btn-accent {
+    background-color: var(--accent-orange);
+    border-color: var(--accent-orange);
+    color: white;
+}
+
+.btn-accent:hover {
+    background-color: var(--accent-orange-dark);
+    border-color: var(--accent-orange-dark);
+    color: white;
+}
+
+.btn-outline-primary {
+    color: var(--primary-blue);
+    border-color: var(--primary-blue);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-blue);
+    border-color: var(--primary-blue);
+}
+
+/* ---------- Page Headers ---------- */
+.page-header {
+    background: linear-gradient(135deg, var(--primary-blue), var(--primary-blue-light));
+    color: white;
+    padding: 50px 0;
+}
+
+.page-header h1 {
+    color: white;
+    font-size: 2.5em;
+}
+
+.page-header p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.2em;
+}
+
+/* ---------- Section Titles ---------- */
+.section-title {
+    font-family: 'Sriracha', cursive;
+    color: var(--primary-blue);
+    font-size: 2em;
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* ---------- Package Cards ---------- */
+.package-card {
+    background-color: var(--bg-card);
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.package-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+.package-card .card-img-top {
+    height: 220px;
+    object-fit: cover;
+}
+
+.package-card .card-title {
+    font-family: 'Sriracha', cursive;
+    color: var(--primary-blue);
+    font-size: 1.3em;
+}
+
+.package-card .card-footer {
+    background-color: transparent;
+    border-top: 1px solid var(--border-blue);
+}
+
+/* ---------- Destination Badge ---------- */
+.destination-badge {
+    color: var(--accent-orange);
+    font-weight: 600;
+    font-size: 0.95em;
+}
+
+.destination-badge i {
+    color: var(--accent-orange);
+}
+
+/* ---------- Price Tag ---------- */
+.price-tag {
+    color: var(--accent-orange);
+    font-family: 'Sriracha', cursive;
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+/* ---------- Feature Boxes ---------- */
+.feature-box {
+    background-color: var(--bg-card);
+    border: 2px solid var(--border-blue);
+    border-radius: 12px;
+    padding: 30px 20px;
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+.feature-box:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    font-size: 3em;
+    color: var(--accent-orange);
+    margin-bottom: 15px;
+}
+
+/* ---------- Background Sections ---------- */
+.bg-light-blue {
+    background-color: var(--bg-light-blue);
+}
+
+/* ---------- About Image ---------- */
+.about-img {
+    border-radius: 12px;
+    border: 4px solid var(--border-blue);
+}
+
+/* ---------- Form Cards ---------- */
+.form-card {
+    background-color: var(--bg-card);
+    border: 2px solid var(--border-blue);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.form-card .form-label {
+    color: var(--primary-blue);
+    font-weight: 600;
+    font-family: 'Sriracha', cursive;
+}
+
+.form-card .form-control {
+    border: 1px solid var(--border-blue);
+    border-radius: 8px;
+    padding: 10px 15px;
+}
+
+.form-card .form-control:focus {
+    border-color: var(--primary-blue-light);
+    box-shadow: 0 0 0 3px rgba(0, 112, 187, 0.15);
+}
+
+/* ---------- Comment Cards ---------- */
+.comment-form-card {
+    background-color: var(--bg-light-blue);
+    border: 2px solid var(--border-blue);
+    border-radius: 12px;
+}
+
+.comment-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-blue);
+    border-radius: 10px;
+    transition: transform 0.2s ease;
+}
+
+.comment-card:hover {
+    transform: translateX(5px);
+}
+
+.comment-username {
+    color: var(--primary-blue);
+    font-family: 'Sriracha', cursive;
+}
+
+/* ---------- Booking Table ---------- */
+.booking-table {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.booking-table thead {
+    background-color: var(--primary-blue);
+    color: white;
+}
+
+.booking-table thead th {
+    font-family: 'Sriracha', cursive;
+    padding: 15px;
+    border: none;
+}
+
+.booking-table tbody td {
+    padding: 12px 15px;
+    vertical-align: middle;
+}
+
+/* ---------- Festival Rows ---------- */
+.festival-row {
+    padding: 30px 0;
+    border-bottom: 1px solid var(--border-blue);
+}
+
+.festival-row:last-of-type {
+    border-bottom: none;
+}
+
+.festival-row img {
+    border-radius: 12px;
+    border: 3px solid var(--border-blue);
+}
+
+.badge.bg-accent {
+    background-color: var(--accent-orange) !important;
+    font-family: 'Sriracha', cursive;
+    font-size: 0.9em;
+    padding: 6px 14px;
+}
+
+/* ---------- Footer ---------- */
+footer {
+    background-color: var(--primary-blue-dark);
+    color: rgba(255, 255, 255, 0.85);
+    padding: 50px 0 20px;
+    margin-top: 50px;
+}
+
+footer h5 {
+    color: var(--accent-orange);
+    font-size: 1.3em;
+    margin-bottom: 15px;
+}
+
+footer a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: var(--accent-orange);
+}
+
+footer hr {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.social-icons a {
+    font-size: 1.5em;
+    margin-right: 15px;
+    color: rgba(255, 255, 255, 0.7);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--accent-orange);
+    transform: translateY(-3px);
+}
+
+/* ---------- Alerts ---------- */
+.alert-success {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+    border-radius: 10px;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+    border-radius: 10px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.2em;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1em;
+    }
+
+    .section-title {
+        font-size: 1.6em;
+    }
+
+    .page-header h1 {
+        font-size: 1.8em;
+    }
+
+    .city-section {
+        flex-direction: column;
+    }
+
+    .festival-row img {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-title {
+        font-size: 1.8em;
+    }
+
+    .navbar-brand {
+        font-size: 1.2em;
+    }
+
+    .booking-table {
+        font-size: 0.85em;
+    }
+}
