@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% block title %}Search Results - Cultural Compass{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container text-center">
+        <h1><i class="bi bi-search"></i> Search Packages</h1>
+        <p>Find your perfect cultural adventure</p>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        <!-- Search Form -->
+        <div class="row justify-content-center mb-4">
+            <div class="col-lg-6">
+                <form action="{{ url_for('search_packages') }}" method="GET" class="d-flex">
+                    <input type="search" class="form-control me-2" name="q" value="{{ query }}"
+                           placeholder="Search by destination, title, or keyword..." autofocus>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="bi bi-search"></i> Search
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        {% if query %}
+            <h4 class="mb-3">
+                Results for "<strong>{{ query }}</strong>"
+                <span class="badge bg-primary rounded-pill">{{ results|length }}</span>
+            </h4>
+
+            {% if results %}
+            <div class="row">
+                {% for pkg in results %}
+                <div class="col-md-4 mb-4">
+                    <div class="card package-card h-100">
+                        <img src="{{ pkg.image_url }}" class="card-img-top" alt="{{ pkg.title }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ pkg.title }}</h5>
+                            <p class="destination-badge">
+                                <i class="bi bi-geo-alt"></i> {{ pkg.destination }}
+                            </p>
+                            <p class="card-text text-muted">
+                                <i class="bi bi-clock"></i> {{ pkg.duration }}
+                            </p>
+                            <p class="card-text">{{ pkg.description[:100] }}...</p>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between align-items-center">
+                            <span class="price-tag">${{ "%.2f"|format(pkg.price) }}</span>
+                            <a href="{{ url_for('package_detail', package_id=pkg.id) }}" class="btn btn-primary btn-sm">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% else %}
+            <div class="text-center py-5">
+                <i class="bi bi-emoji-frown display-1 text-muted"></i>
+                <p class="lead mt-3">No packages found matching "{{ query }}".</p>
+                <a href="{{ url_for('packages') }}" class="btn btn-primary">Browse All Packages</a>
+            </div>
+            {% endif %}
+        {% else %}
+            <div class="text-center py-5">
+                <i class="bi bi-search display-1 text-muted"></i>
+                <p class="lead mt-3">Enter a search term to find travel packages.</p>
+            </div>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}

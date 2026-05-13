@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block title %}Bookings - Cultural Compass{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container text-center">
+        <h1><i class="bi bi-calendar-check"></i> Booking Requests</h1>
+        <p>View and manage all submitted booking requests</p>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        {% if bookings %}
+        <div class="table-responsive">
+            <table class="table table-hover booking-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Package</th>
+                        <th>Destination</th>
+                        <th>Travel Date</th>
+                        <th>Travelers</th>
+                        <th>Submitted</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for booking in bookings %}
+                    <tr>
+                        <td>{{ booking.id }}</td>
+                        <td><strong>{{ booking.name }}</strong></td>
+                        <td>{{ booking.email }}</td>
+                        <td>{{ booking.package_title or 'N/A' }}</td>
+                        <td>
+                            <i class="bi bi-geo-alt"></i>
+                            {{ booking.destination or 'N/A' }}
+                        </td>
+                        <td>{{ booking.travel_date.strftime('%B %d, %Y') if booking.travel_date else 'N/A' }}</td>
+                        <td>{{ booking.num_travelers }}</td>
+                        <td>{{ booking.created_at.strftime('%m/%d/%Y') }}</td>
+                        <td>
+                            <form action="{{ url_for('delete_booking', booking_id=booking.id) }}" method="POST"
+                                  onsubmit="return confirm('Delete this booking?');">
+                                <button type="submit" class="btn btn-sm btn-outline-danger">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <div class="text-center py-5">
+            <i class="bi bi-calendar-x display-1 text-muted"></i>
+            <p class="lead mt-3">No booking requests yet.</p>
+            <a href="{{ url_for('packages') }}" class="btn btn-primary">Browse Packages</a>
+        </div>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}

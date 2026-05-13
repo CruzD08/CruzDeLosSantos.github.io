@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block title %}Contact Us - Cultural Compass{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container text-center">
+        <h1><i class="bi bi-envelope"></i> Contact Us</h1>
+        <p>Have questions? We'd love to hear from you!</p>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="row">
+                    <!-- Contact Info -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card text-center p-4 h-100">
+                            <i class="bi bi-envelope-fill display-4 text-primary mb-3"></i>
+                            <h5>Email</h5>
+                            <p>cruzmeirycollado@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card text-center p-4 h-100">
+                            <i class="bi bi-geo-alt-fill display-4 text-primary mb-3"></i>
+                            <h5>Location</h5>
+                            <p>New York, NY</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card text-center p-4 h-100">
+                            <i class="bi bi-clock-fill display-4 text-primary mb-3"></i>
+                            <h5>Hours</h5>
+                            <p>Mon - Fri: 9AM - 6PM</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="card form-card mt-3">
+                    <div class="card-body p-4">
+                        <h4 class="mb-3">Send Us a Message</h4>
+                        <form action="{{ url_for('contact') }}" method="POST">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="name" class="form-label">Your Name</label>
+                                    <input type="text" class="form-control" id="name" name="name"
+                                           placeholder="Enter your name" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="email" class="form-label">Email Address</label>
+                                    <input type="email" class="form-control" id="email" name="email"
+                                           placeholder="your.email@example.com" required>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="subject" class="form-label">Subject</label>
+                                <input type="text" class="form-control" id="subject" name="subject"
+                                       placeholder="What is this about?" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" name="message" rows="5"
+                                          placeholder="Tell us how we can help..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-accent btn-lg">
+                                <i class="bi bi-send"></i> Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

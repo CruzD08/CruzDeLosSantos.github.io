@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% block title %}Book {{ package.title }} - Cultural Compass{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container text-center">
+        <h1><i class="bi bi-calendar-check"></i> Book Your Trip</h1>
+        <p>Submit a booking request for "{{ package.title }}"</p>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <!-- Package Summary -->
+                <div class="card mb-4">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="{{ package.image_url }}" class="img-fluid rounded-start h-100"
+                                 alt="{{ package.title }}" style="object-fit: cover;">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ package.title }}</h5>
+                                <p class="destination-badge">
+                                    <i class="bi bi-geo-alt"></i> {{ package.destination }}
+                                </p>
+                                <p class="text-muted"><i class="bi bi-clock"></i> {{ package.duration }}</p>
+                                <p class="price-tag fs-4">${{ "%.2f"|format(package.price) }} per person</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Booking Form -->
+                <div class="card form-card">
+                    <div class="card-body p-4">
+                        <h4 class="mb-3">Booking Information</h4>
+                        <form action="{{ url_for('book_package', package_id=package.id) }}" method="POST">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Full Name</label>
+                                <input type="text" class="form-control" id="name" name="name"
+                                       placeholder="Enter your full name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" class="form-control" id="email" name="email"
+                                       placeholder="your.email@example.com" required>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="travel_date" class="form-label">Preferred Travel Date</label>
+                                    <input type="date" class="form-control" id="travel_date" name="travel_date" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="num_travelers" class="form-label">Number of Travelers</label>
+                                    <input type="number" class="form-control" id="num_travelers" name="num_travelers"
+                                           min="1" max="20" value="1" required>
+                                </div>
+                            </div>
+                            <div class="d-flex gap-2">
+                                <button type="submit" class="btn btn-accent btn-lg">
+                                    <i class="bi bi-send"></i> Submit Booking
+                                </button>
+                                <a href="{{ url_for('package_detail', package_id=package.id) }}" class="btn btn-outline-secondary btn-lg">
+                                    Cancel
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
